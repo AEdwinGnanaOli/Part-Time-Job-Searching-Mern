@@ -29,7 +29,10 @@ function VendorSignInProduct() {
         setTimeout(resolve, 2000);
       });
       axios
-        .post("http://localhost:8800/vendorregister", userData)
+        .post(
+          "https://part-time-job-searching-mern.onrender.com/vendorregister",
+          userData
+        )
         .then((user) => {
           setId(user.data.vendor._id);
           if (user.data.message === "User already exists") {

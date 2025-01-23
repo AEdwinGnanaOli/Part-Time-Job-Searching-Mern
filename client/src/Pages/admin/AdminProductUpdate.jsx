@@ -30,7 +30,10 @@ function AdminProductUpdate() {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("http://localhost:8800/getproductdetails/" + id)
+      .get(
+        "https://part-time-job-searching-mern.onrender.com/getproductdetails/" +
+          id
+      )
       .then((user) => {
         setUserData({
           shopname: user.data.pdls.shopname,
@@ -66,7 +69,11 @@ function AdminProductUpdate() {
       formData.append("role", userData.role);
       formData.append("file", userData.file);
       axios
-        .put("http://localhost:8800/productupdate/" + id, formData)
+        .put(
+          "https://part-time-job-searching-mern.onrender.com/productupdate/" +
+            id,
+          formData
+        )
         .then((user) => {
           if (user.data.message === "Product update Successfully") {
             navigate("/adminhome");

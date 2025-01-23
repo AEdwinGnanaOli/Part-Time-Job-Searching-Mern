@@ -51,7 +51,7 @@ const Dashboard = ({
         navigate("/login");
       }
       const { data } = await axios.post(
-        "http://localhost:8800/adminhome",
+        "https://part-time-job-searching-mern.onrender.com/adminhome",
         {},
         { withCredentials: true }
       );
@@ -188,7 +188,7 @@ const Dashboard = ({
               minHeight: 280,
               background: colorBgContainer,
               borderRadius: borderRadiusLG,
-              overflow:"scroll"
+              overflow: "scroll"
             }}
           >
             {/* User Profile Start */}

@@ -28,7 +28,10 @@ function SignIn() {
         setTimeout(resolve, 2000);
       });
       axios
-        .post("http://localhost:8800/userRegister", { ...userData })
+        .post(
+          "https://part-time-job-searching-mern.onrender.com/userRegister",
+          { ...userData }
+        )
         .then((user) => {
           if (user.data.message === "User already exists") {
             throw new Error();

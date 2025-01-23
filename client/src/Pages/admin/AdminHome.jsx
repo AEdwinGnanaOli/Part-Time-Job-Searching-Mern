@@ -28,7 +28,7 @@ function AdminHome({ colors }) {
         navigate("/login");
       }
       const { data } = await axios.post(
-        "http://localhost:8800/adminhome",
+        "https://part-time-job-searching-mern.onrender.com/adminhome",
         {},
         { withCredentials: true }
       );

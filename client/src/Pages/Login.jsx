@@ -33,7 +33,9 @@ function Login() {
         setTimeout(resolve, 2000);
       });
       axios
-        .post("http://localhost:8800/login", { ...values })
+        .post("https://part-time-job-searching-mern.onrender.com/login", {
+          ...values
+        })
         .then(async (user) => {
           if (user.data.message === "Login Successfully") {
             if (user.data.user.role === "admin") {

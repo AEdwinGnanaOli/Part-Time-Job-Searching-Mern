@@ -12,7 +12,7 @@ function UserCard() {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:8800/usercartdisplay/${auth.user._id}/${auth.token}`
+        `https://part-time-job-searching-mern.onrender.com/usercartdisplay/${auth.user._id}/${auth.token}`
       )
       .then((product) => {
         setCart(product.data.userCart);
@@ -23,7 +23,9 @@ function UserCard() {
   }, [userCart]);
   const handleDelete = (id, vendorId) => {
     axios
-      .delete(`http://localhost:8800/usercartdelete/${id}/${vendorId}`)
+      .delete(
+        `https://part-time-job-searching-mern.onrender.com/usercartdelete/${id}/${vendorId}`
+      )
       .then((user) => {
         // window.location.reload();
       })
@@ -46,7 +48,7 @@ function UserCard() {
               cover={
                 <img
                   alt="example"
-                  src={`http://localhost:8800/images/${vendor.image}`}
+                  src={`https://part-time-job-searching-mern.onrender.com/images/${vendor.image}`}
                   style={{ height: "300px" }}
                 />
               }

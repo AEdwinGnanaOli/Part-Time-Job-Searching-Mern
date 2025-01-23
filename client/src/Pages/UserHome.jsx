@@ -35,7 +35,7 @@ function Home({ colors }) {
         navigate("/login");
       }
       const { data } = await axios.post(
-        "http://localhost:8800/",
+        "https://part-time-job-searching-mern.onrender.com/",
         {},
         { withCredentials: true }
       );
@@ -59,7 +59,9 @@ function Home({ colors }) {
   };
   const handleUserDelete = (id) => {
     axios
-      .delete(`http://localhost:8800/user/delete/${id}`)
+      .delete(
+        `https://part-time-job-searching-mern.onrender.com/user/delete/${id}`
+      )
       .then((user) => {
         window.location.reload();
         Logout();
@@ -82,7 +84,7 @@ function Home({ colors }) {
             cover={
               <img
                 alt="example"
-                src={`http://localhost:8800/images/${vendor.image}`}
+                src={`https://part-time-job-searching-mern.onrender.com/images/${vendor.image}`}
                 style={{ height: "300px" }}
               />
             }

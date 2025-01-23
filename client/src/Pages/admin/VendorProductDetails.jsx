@@ -16,7 +16,9 @@ function VendorProductDetails() {
   // Fetch vendor data
   const fetchVendorData = async () => {
     try {
-      const { data } = await axios.get("http://localhost:8800/admin/vendorproductdetails");
+      const { data } = await axios.get(
+        "https://part-time-job-searching-mern.onrender.com/admin/vendorproductdetails"
+      );
       setVendorData(data.vendorDatas);
       setFilteredData(data.vendorDatas);
     } catch (err) {
@@ -31,7 +33,9 @@ function VendorProductDetails() {
   // Handle delete action
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8800/admin/vendorproductdelete/${id}`);
+      await axios.delete(
+        `https://part-time-job-searching-mern.onrender.com/admin/vendorproductdelete/${id}`
+      );
       setFilteredData(filteredData.filter((item) => item._id !== id));
     } catch (err) {
       console.error("Error deleting vendor product:", err);
@@ -72,7 +76,7 @@ function VendorProductDetails() {
           alt="Vendor"
           className="vendor-p-img"
         />
-      ),
+      )
     },
     { name: "Shop Name", selector: (row) => row.shopname, sortable: true },
     { name: "Email", selector: (row) => row.email },
@@ -101,8 +105,8 @@ function VendorProductDetails() {
             <MdDelete className="admin-edit-icon" />
           </Button>
         </div>
-      ),
-    },
+      )
+    }
   ];
 
   return (

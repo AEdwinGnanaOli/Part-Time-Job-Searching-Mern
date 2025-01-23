@@ -12,7 +12,9 @@ function VendorDetails() {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("http://localhost:8800/admin/vendordetails")
+      .get(
+        "https://part-time-job-searching-mern.onrender.com/admin/vendordetails"
+      )
       .then((result) => {
         setData(result.data.vendorDatas);
       })
@@ -22,7 +24,9 @@ function VendorDetails() {
   }, []);
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:8800/vendor/delete/${id}`)
+      .delete(
+        `https://part-time-job-searching-mern.onrender.com/vendor/delete/${id}`
+      )
       .then((user) => {
         window.location.reload();
       })

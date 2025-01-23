@@ -12,7 +12,9 @@ function UserDetails() {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("http://localhost:8800/admin/userdetails")
+      .get(
+        "https://part-time-job-searching-mern.onrender.com/admin/userdetails"
+      )
       .then((result) => {
         setData(result.data.userDetails);
       })
@@ -22,7 +24,9 @@ function UserDetails() {
   }, []);
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:8800/user/delete/${id}`)
+      .delete(
+        `https://part-time-job-searching-mern.onrender.com/user/delete/${id}`
+      )
       .then((user) => {
         window.location.reload();
       })

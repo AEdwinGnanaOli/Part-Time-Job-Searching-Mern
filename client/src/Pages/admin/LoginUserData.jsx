@@ -10,13 +10,17 @@ function LoginUserData() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8800/login/userdata").then((user) => {
-      setData(user.data.userDatas);
-    });
+    axios
+      .get("https://part-time-job-searching-mern.onrender.com/login/userdata")
+      .then((user) => {
+        setData(user.data.userDatas);
+      });
   }, []);
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:8800/deletedetails/${id}`)
+      .delete(
+        `https://part-time-job-searching-mern.onrender.com/deletedetails/${id}`
+      )
       .then((user) => {
         window.location.reload();
       })

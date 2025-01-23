@@ -30,7 +30,10 @@ function ResetPassword() {
         throw new Error();
       } else {
         axios
-          .post(`http://localhost:8800/resetpassword/${id}/${token}`, userData)
+          .post(
+            `https://part-time-job-searching-mern.onrender.com/resetpassword/${id}/${token}`,
+            userData
+          )
           .then((user) => {
             if (user.data.message === "The password reset Successfully") {
               navigate("/login");

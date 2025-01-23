@@ -11,7 +11,9 @@ function VendorProductFullDedails() {
   const userId = sessionStorage.getItem("userid");
   useEffect(() => {
     axios
-      .get(`http://localhost:8800/productfulldetails/${id}/${token}`)
+      .get(
+        `https://part-time-job-searching-mern.onrender.com/productfulldetails/${id}/${token}`
+      )
       .then((product) => {
         console.log(product);
         setVendorProducts([product.data.vendorProductDetails]);
@@ -20,7 +22,9 @@ function VendorProductFullDedails() {
 
   const handleCard = (vendorId) => {
     axios
-      .post(`http://localhost:8800/usercart/${userId}/${vendorId}/${id}`)
+      .post(
+        `https://part-time-job-searching-mern.onrender.com/usercart/${userId}/${vendorId}/${id}`
+      )
       .then((card) => {
         navigate("/userhome");
       })
@@ -28,7 +32,9 @@ function VendorProductFullDedails() {
         console.log(err);
       });
     axios
-      .post(`http://localhost:8800/userdetails/${userId}/${vendorId}/${id}`)
+      .post(
+        `https://part-time-job-searching-mern.onrender.com/userdetails/${userId}/${vendorId}/${id}`
+      )
       .then((result) => {})
       .catch((err) => {
         console.log(err);
@@ -45,7 +51,7 @@ function VendorProductFullDedails() {
               <div className="shop-img">
                 <Card.Img
                   variant="top"
-                  src={`http://localhost:8800/images/${vendor.image}`}
+                  src={`https://part-time-job-searching-mern.onrender.com/images/${vendor.image}`}
                 />
               </div>
               <div className="card-body">

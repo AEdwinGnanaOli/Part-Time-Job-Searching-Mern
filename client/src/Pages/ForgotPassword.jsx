@@ -22,7 +22,7 @@ function ForgotPassword() {
         setTimeout(resolve, 2000);
       });
       axios
-        .post("http://localhost:8800/forgotpassword", userData)
+        .post("https://part-time-job-searching-mern.onrender.com/forgotpassword", userData)
         .then((user) => {
           if (user.data.message !== "User no existed") {
             throw new Error();

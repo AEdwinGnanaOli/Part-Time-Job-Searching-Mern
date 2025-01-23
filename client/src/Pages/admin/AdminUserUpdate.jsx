@@ -18,7 +18,10 @@ function AdminUserUpdate() {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("http://localhost:8800/getuser/vendor/details/" + id)
+      .get(
+        "https://part-time-job-searching-mern.onrender.com/getuser/vendor/details/" +
+          id
+      )
       .then((user) => {
         setUserData({
           name: user.data.udls.name,
@@ -37,7 +40,10 @@ function AdminUserUpdate() {
         setTimeout(resolve, 2000);
       });
       axios
-        .put("http://localhost:8800/user/update/" + id, { ...userData })
+        .put(
+          "https://part-time-job-searching-mern.onrender.com/user/update/" + id,
+          { ...userData }
+        )
         .then((user) => {
           if (user.data.message === "User already exists") {
             throw new Error();

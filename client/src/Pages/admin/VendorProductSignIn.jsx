@@ -48,7 +48,7 @@ function ProductSignIn() {
   //     formData.append("file", userData.file);
   //     console.log(Object.entries(formData));
   //     axios
-  //       .post(`http://localhost:8800/productregister/${vendorId}`, formData)
+  //       .post(`https://part-time-job-searching-mern.onrender.com/productregister/${vendorId}`, formData)
   //       .then((user) => {
   //         if (user.data === "User already exists") {
   //           throw new Error();
@@ -82,7 +82,10 @@ function ProductSignIn() {
       formData.append("file", userData.file);
       console.log(Object.entries([...formData]));
       axios
-        .post(`http://localhost:8800/productregister/${vendorId}`, formData)
+        .post(
+          `https://part-time-job-searching-mern.onrender.com/productregister/${vendorId}`,
+          formData
+        )
         .then((user) => {
           if (user.data === "User already exists") {
             throw new Error();
