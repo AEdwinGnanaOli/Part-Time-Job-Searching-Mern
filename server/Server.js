@@ -7,7 +7,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const { MONGO_URL, PORT } = process.env
 app.use(cors({
-    origin: ['https://bespoke-taiyaki-d40a38.netlify.app',
+    origin: ['https://part-job-searching.netlify.app',
         "http://localhost:5173"
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
